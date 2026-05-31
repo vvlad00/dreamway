@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог турів — DreamWay</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #121212; color: #E0E0E0; font-family: 'Times New Roman', serif; line-height: 1.6; }
+    header { background-color: #1A1A1A; border-bottom: 2px solid #D4AF37; padding: 30px 20px; text-align: center; }
+    h1 { color: #D4AF37; font-size: 32px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+    
+    nav { display: block; text-align: center; margin: 25px 0; }
+    .nav-btn { display: inline-block; background-color: #1A1A1A; color: #D4AF37; text-decoration: none; padding: 12px 25px; margin: 0 10px; border: 1px solid #D4AF37; border-radius: 4px; font-weight: bold; transition: all 0.3s ease; text-transform: uppercase; font-size: 14px; }
+    .nav-btn:hover { background-color: #D4AF37; color: #121212; box-shadow: 0 0 10px #D4AF37; }
+    .active { background-color: #D4AF37; color: #121212; }
+
+    main { max-width: 1000px; margin: 0 auto; padding: 20px; }
+    h2 { color: #D4AF37; text-align: center; margin-bottom: 40px; text-transform: uppercase; font-size: 26px; letter-spacing: 1px; }
+    
+    /* Картки турів та готелів */
+    .tour-card { background-color: #1A1A1A; border: 1px solid #AA7C11; border-radius: 8px; padding: 30px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
+    .tour-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #AA7C11; padding-bottom: 15px; margin-bottom: 20px; }
+    .tour-title { color: #D4AF37; font-size: 22px; font-weight: bold; text-transform: uppercase; }
+    .tour-price { color: #D4AF37; font-size: 20px; font-weight: bold; background: #262626; padding: 5px 15px; border-radius: 4px; border: 1px solid #AA7C11; }
+    .tour-hotel { font-style: italic; color: #FFFFFF; font-size: 18px; margin-bottom: 10px; }
+    .tour-desc { color: #CCCCCC; margin-bottom: 25px; font-size: 16px; }
+    
+    /* Адаптивний контейнер для відео з YouTube */
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border: 1px solid #AA7C11; border-radius: 4px; background-color: #000; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+    footer { background-color: #1A1A1A; border-top: 2px solid #D4AF37; padding: 30px 20px; text-align: center; margin-top: 60px; color: #888888; font-size: 14px; }
+    footer p { margin-bottom: 5px; font-size: 14px; }
+    .footer-highlight { color: #D4AF37; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DreamWay</h1>
+  </header>
+
+  <nav>
+    <a href="index.html" class="nav-btn">Головна</a>
+    <a href="tours.html" class="nav-btn active">Каталог турів</a>
+    <a href="info.html" class="nav-btn">Довідкова інформація</a>
+  </nav>
+
+  <main>
+    <h2>Ексклюзивні пропозиції відпочинку</h2>
+
+    <div class="tour-card">
+      <div class="tour-header">
+        <div class="tour-title">Неймовірна Туреччина (Белек)</div>
+        <div class="tour-price">від 45 000 грн</div>
+      </div>
+      <div class="tour-hotel">Преміумготель: Rixos Premium Belek 5★</div>
+      <p class="tour-desc">Пакетний тур "Ультра все включено" на 7 ночей. На вас чекає розкішний піщаний пляж, вишукані ресторани a la carte, спа-комплекс світового рівня та незабутні вечірні шоу. Ідеально підходить як для VIP сімейного відпочинку, так і для романтичної подорожі.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/SshsLwH_RMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <div class="tour-header">
+        <div class="tour-title">Казковий Єгипет (Шарм-ель-Шейх)</div>
+        <div class="tour-price">від 32 000 грн</div>
+      </div>
+      <div class="tour-hotel">Преміумготель: Rixos Premium Seagate 5★</div>
+      <p class="tour-desc">Ексклюзивний відпочинок на першій береговій лінії Червоного моря. Власна унікальна акваторія з дивовижним кораловим рифом для снорклінгу, величезний аквапарк, ультрасучасні номери та цілодобовий люксовий сервіс.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/Y0A-M8kG7c0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <div class="tour-header">
+        <div class="tour-title">Райські Мальдіви (Атолл Лавіані)</div>
+        <div class="tour-price">від 120 000 грн</div>
+      </div>
+      <div class="tour-hotel">Преміумготель: Jawakara Islands Maldives 5★</div>
+      <p class="tour-desc">Тур на 7 ночей на базі повного пансіону або All Inclusive. Унікальна концепція — два розкішні тропічні острови, з'єднані довгим мальовничим мостом. Білосніжний пісок, персональні вілли над водою та усамітнення посеред Індійського океану.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/rV3X3vXG62Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p class="footer-highlight">© 2026 Туристична агенція DreamWay. Усі права захищено.</p>
+    <p>Адреса офісу: м. Володимир, вул. Устилузька, б. 42</p>
+    <p>Контактний телефон: <span class="footer-highlight">+380961234567</span></p>
+  </footer>
+
+</body>
+</html>

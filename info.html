@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Довідкова інформація — DreamWay</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #121212; color: #E0E0E0; font-family: 'Times New Roman', serif; line-height: 1.6; }
+    header { background-color: #1A1A1A; border-bottom: 2px solid #D4AF37; padding: 30px 20px; text-align: center; }
+    h1 { color: #D4AF37; font-size: 32px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+    
+    nav { display: block; text-align: center; margin: 25px 0; }
+    .nav-btn { display: inline-block; background-color: #1A1A1A; color: #D4AF37; text-decoration: none; padding: 12px 25px; margin: 0 10px; border: 1px solid #D4AF37; border-radius: 4px; font-weight: bold; transition: all 0.3s ease; text-transform: uppercase; font-size: 14px; }
+    .nav-btn:hover { background-color: #D4AF37; color: #121212; box-shadow: 0 0 10px #D4AF37; }
+    .active { background-color: #D4AF37; color: #121212; }
+
+    main { max-width: 800px; margin: 0 auto; padding: 20px; }
+    .info-card { background-color: #1A1A1A; border: 1px solid #AA7C11; border-radius: 8px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
+    h2 { color: #D4AF37; text-align: center; margin-bottom: 30px; text-transform: uppercase; font-size: 24px; }
+    
+    .info-group { margin-bottom: 25px; border-left: 3px solid #D4AF37; padding-left: 15px; }
+    .info-label { color: #AA7C11; font-weight: bold; text-transform: uppercase; font-size: 14px; margin-bottom: 5px; }
+    .info-value { font-size: 18px; color: #FFFFFF; }
+
+    footer { background-color: #1A1A1A; border-top: 2px solid #D4AF37; padding: 30px 20px; text-align: center; margin-top: 60px; color: #888888; font-size: 14px; }
+    footer p { margin-bottom: 5px; font-size: 14px; }
+    .footer-highlight { color: #D4AF37; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DreamWay</h1>
+  </header>
+
+  <nav>
+    <a href="index.html" class="nav-btn">Головна</a>
+    <a href="tours.html" class="nav-btn">Каталог турів</a>
+    <a href="info.html" class="nav-btn active">Довідкова інформація</a>
+  </nav>
+
+  <main>
+    <div class="info-card">
+      <h2>Контакти та довідкові дані</h2>
+      
+      <div class="info-group">
+        <div class="info-label">Адреса нашого головного офісу</div>
+        <div class="info-value">Україна, м. Володимир, вул. Устилузька, будинок 42</div>
+      </div>
+
+      <div class="info-group">
+        <div class="info-label">Телефон для зв'язку та бронювання</div>
+        <div class="info-value">+38 (096) 123-45-67</div>
+      </div>
+
+      <div class="info-group">
+        <div class="info-label">Графік роботи офісу</div>
+        <div class="info-value">Понеділок – П'ятниця: з 09:00 до 18:00<br>Субота: з 10:00 до 15:00 (за попереднім записом)<br>Неділя: вихідний</div>
+      </div>
+
+      <div class="info-group">
+        <div class="info-label">Додаткова інформація</div>
+        <div class="info-value">Організація індивідуальних VIP-турів, бронювання бізнес-джетів, вілла-сервіс, підбір готелів класу люкс. Працюємо по всій Україні та дистанційно.</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-highlight">© 2026 Туристична агенція DreamWay. Усі права захищено.</p>
+    <p>Адреса офісу: м. Володимир, вул. Устилузька, б. 42</p>
+    <p>Контактний телефон: <span class="footer-highlight">+380961234567</span></p>
+  </footer>
+
+</body>
+</html>
