@@ -1,76 +1,100 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Довідкова інформація — DreamWay</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: #121212; color: #E0E0E0; font-family: 'Times New Roman', serif; line-height: 1.6; }
-    header { background-color: #1A1A1A; border-bottom: 2px solid #D4AF37; padding: 30px 20px; text-align: center; }
-    h1 { color: #D4AF37; font-size: 32px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-    
-    nav { display: block; text-align: center; margin: 25px 0; }
-    .nav-btn { display: inline-block; background-color: #1A1A1A; color: #D4AF37; text-decoration: none; padding: 12px 25px; margin: 0 10px; border: 1px solid #D4AF37; border-radius: 4px; font-weight: bold; transition: all 0.3s ease; text-transform: uppercase; font-size: 14px; }
-    .nav-btn:hover { background-color: #D4AF37; color: #121212; box-shadow: 0 0 10px #D4AF37; }
-    .active { background-color: #D4AF37; color: #121212; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamWay - Довідкова інформація</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #0B1320; --gold-light: #E5C687; --gold-dark: #C5A059; --text-light: #F4F4F4; --border-color: #C5A059; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    main { max-width: 800px; margin: 0 auto; padding: 20px; }
-    .info-card { background-color: #1A1A1A; border: 1px solid #AA7C11; border-radius: 8px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
-    h2 { color: #D4AF37; text-align: center; margin-bottom: 30px; text-transform: uppercase; font-size: 24px; }
-    
-    .info-group { margin-bottom: 25px; border-left: 3px solid #D4AF37; padding-left: 15px; }
-    .info-label { color: #AA7C11; font-weight: bold; text-transform: uppercase; font-size: 14px; margin-bottom: 5px; }
-    .info-value { font-size: 18px; color: #FFFFFF; }
+        body {
+            background-color: var(--bg-color); color: var(--text-light); font-family: 'Montserrat', sans-serif;
+            background-image: linear-gradient(rgba(11, 19, 32, 0.9), rgba(11, 19, 32, 0.95)), url('https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-attachment: fixed; background-position: center;
+        }
 
-    footer { background-color: #1A1A1A; border-top: 2px solid #D4AF37; padding: 30px 20px; text-align: center; margin-top: 60px; color: #888888; font-size: 14px; }
-    footer p { margin-bottom: 5px; font-size: 14px; }
-    .footer-highlight { color: #D4AF37; font-weight: bold; }
-  </style>
+        h1, h2, h3, .brand-font { font-family: 'Playfair Display', serif; color: var(--gold-light); font-weight: 600; }
+        .gold-text { color: var(--gold-light); }
+
+        header { text-align: center; padding: 40px 20px 20px 20px; }
+        .logo { font-size: 3rem; line-height: 1; margin-bottom: 10px; }
+        .agency-name { font-size: 1.5rem; letter-spacing: 5px; text-transform: uppercase; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        
+        .nav-icons {
+            display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 40px;
+            border-top: 1px solid rgba(197, 160, 89, 0.3); border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding: 15px 0;
+        }
+        .nav-item {
+            display: flex; align-items: center; gap: 10px; font-size: 0.9rem; text-transform: uppercase;
+            letter-spacing: 1px; text-decoration: none; color: var(--text-light); transition: 0.3s;
+        }
+        .nav-item:hover, .nav-item.active { color: var(--gold-light); }
+
+        .info-box { border: 1px solid var(--border-color); padding: 40px; background-color: rgba(11, 19, 32, 0.8); border-radius: 5px; margin-bottom: 40px; }
+        .info-box h3 { margin-bottom: 30px; text-align: center; font-size: 2rem; letter-spacing: 2px; }
+        
+        .info-list { list-style: none; margin-bottom: 30px; }
+        .info-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; font-size: 1.2rem; }
+        .info-list li::before { content: '✓'; color: var(--gold-light); font-weight: bold; font-size: 1.5rem; }
+
+        .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: center; margin-top: 30px; border-top: 1px dashed rgba(197, 160, 89, 0.3); padding-top: 30px; }
+        .contact-card { padding: 20px; border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 5px; }
+        .contact-card h4 { color: var(--gold-dark); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+
+        footer { border-top: 1px solid var(--border-color); padding: 20px 0; text-align: center; margin-top: 40px; display: flex; justify-content: space-around; flex-wrap: wrap; background-color: rgba(11, 19, 32, 0.9); }
+        .contact-item { display: flex; align-items: center; gap: 10px; margin: 10px; color: var(--gold-light); font-size: 1rem; }
+
+        @media (max-width: 768px) {
+            .contacts-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>DreamWay</h1>
-  </header>
+    <header>
+        <div class="logo brand-font">DW</div>
+        <div class="agency-name brand-font">DREAMWAY</div>
+    </header>
 
-  <nav>
-    <a href="index.html" class="nav-btn">Головна</a>
-    <a href="tours.html" class="nav-btn">Каталог турів</a>
-    <a href="info.html" class="nav-btn active">Довідкова інформація</a>
-  </nav>
+    <div class="container">
+        <nav class="nav-icons">
+            <a href="index.html" class="nav-item"><span class="gold-text">🏠</span> Головна</a>
+            <a href="tours.html" class="nav-item"><span class="gold-text">✈️</span> Каталог Турів</a>
+            <a href="info.html" class="nav-item active"><span class="gold-text">ℹ️</span> Інформація</a>
+        </nav>
 
-  <main>
-    <div class="info-card">
-      <h2>Контакти та довідкові дані</h2>
-      
-      <div class="info-group">
-        <div class="info-label">Адреса нашого головного офісу</div>
-        <div class="info-value">Україна, м. Володимир, вул. Устилузька, будинок 42</div>
-      </div>
+        <div class="info-box">
+             <h3>Подорожуй з вигодою!</h3>
+             <ul class="info-list">
+                 <li>Раннє бронювання - знижки до 20%</li>
+                 <li>Постійним клієнтам - приємні бонуси</li>
+                 <li>Можливість оплати частинами</li>
+                 <li>Спецпропозиції та гарячі тури щомісяця</li>
+             </ul>
 
-      <div class="info-group">
-        <div class="info-label">Телефон для зв'язку та бронювання</div>
-        <div class="info-value">+38 (096) 123-45-67</div>
-      </div>
-
-      <div class="info-group">
-        <div class="info-label">Графік роботи офісу</div>
-        <div class="info-value">Понеділок – П'ятниця: з 09:00 до 18:00<br>Субота: з 10:00 до 15:00 (за попереднім записом)<br>Неділя: вихідний</div>
-      </div>
-
-      <div class="info-group">
-        <div class="info-label">Додаткова інформація</div>
-        <div class="info-value">Організація індивідуальних VIP-турів, бронювання бізнес-джетів, вілла-сервіс, підбір готелів класу люкс. Працюємо по всій Україні та дистанційно.</div>
-      </div>
+             <div class="contacts-grid">
+                <div class="contact-card">
+                    <h4>📍 Офіс агенції</h4>
+                    <p style="font-size: 1.2rem;">м. Володимир<br>вул. Устилузька, 42</p>
+                </div>
+                <div class="contact-card">
+                    <h4>📞 Зв'язок з нами</h4>
+                    <p style="font-size: 1.2rem; color: var(--gold-light); font-weight: bold;">+38 (096) 123 45 67</p>
+                </div>
+             </div>
+        </div>
     </div>
-  </main>
 
-  <footer>
-    <p class="footer-highlight">© 2026 Туристична агенція DreamWay. Усі права захищено.</p>
-    <p>Адреса офісу: м. Володимир, вул. Устилузька, б. 42</p>
-    <p>Контактний телефон: <span class="footer-highlight">+380961234567</span></p>
-  </footer>
+    <footer>
+        <div class="contact-item">📍 м. Володимир, Україна</div>
+        <div class="contact-item">📞 +38 (096) 123 45 67</div>
+        <div class="contact-item">✈️ @dreamway_tyric</div>
+        <div class="contact-item">✉️ dreamway.tyric@gmail.com</div>
+    </footer>
 
 </body>
 </html>
