@@ -1,501 +1,59 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamWay - Тур Агенція</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0B1320;
-            --gold-light: #E5C687;
-            --gold-dark: #C5A059;
-            --text-light: #F4F4F4;
-            --border-color: #C5A059;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DreamWay — Елітна туристична агенція</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #121212; color: #E0E0E0; font-family: 'Times New Roman', serif; line-height: 1.6; }
+    header { background-color: #1A1A1A; border-bottom: 2px solid #D4AF37; padding: 30px 20px; text-align: center; }
+    h1 { color: #D4AF37; font-size: 32px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+    .subtitle { color: #AA7C11; font-style: italic; font-size: 16px; }
+    
+    /* Навігаційне меню (Кнопки) */
+    nav { display: block; text-align: center; margin: 25px 0; }
+    .nav-btn { display: inline-block; background-color: #1A1A1A; color: #D4AF37; text-decoration: none; padding: 12px 25px; margin: 0 10px; border: 1px solid #D4AF37; border-radius: 4px; font-weight: bold; transition: all 0.3s ease; text-transform: uppercase; font-size: 14px; }
+    .nav-btn:hover { background-color: #D4AF37; color: #121212; box-shadow: 0 0 10px #D4AF37; }
+    .active { background-color: #D4AF37; color: #121212; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-light);
-            font-family: 'Montserrat', sans-serif;
-            background-image: linear-gradient(rgba(11, 19, 32, 0.9), rgba(11, 19, 32, 0.95)), url('https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        }
-
-        h1, h2, h3, .brand-font {
-            font-family: 'Playfair Display', serif;
-            color: var(--gold-light);
-            font-weight: 600;
-        }
-
-        .gold-text {
-            color: var(--gold-light);
-        }
-
-        /* --- Header & Hero --- */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .logo {
-            font-size: 5rem;
-            line-height: 1;
-            margin-bottom: 10px;
-        }
-
-        .agency-name {
-            font-size: 2rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
-
-        .tagline {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.2rem;
-            margin-top: 10px;
-            color: #ccc;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            border: 1px solid var(--gold-dark);
-            border-radius: 50%;
-            padding: 30px;
-            margin: 20px 0;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-        }
-
-        /* --- Navigation Icons --- */
-        .nav-icons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-            border-top: 1px solid rgba(197, 160, 89, 0.3);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-            padding: 15px 0;
-        }
-
-        .nav-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* --- Main Content --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            letter-spacing: 3px;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .grid-tours {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .tour-card {
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            background-color: rgba(11, 19, 32, 0.8);
-            border-radius: 5px;
-        }
-
-        .tour-card h3 {
-            text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
-
-        /* --- Tables --- */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-
-        th {
-            color: var(--gold-dark);
-            text-transform: uppercase;
-            font-weight: 400;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-            text-align: left;
-        }
-
-        td {
-            padding: 15px 5px;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
-            vertical-align: middle;
-        }
-
-        .dest-name {
-            font-weight: 600;
-            text-transform: uppercase;
-            color: var(--text-light);
-        }
-
-        .dest-sub {
-            font-size: 0.75rem;
-            color: #aaa;
-        }
-
-        .hotel-name {
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        .price {
-            font-size: 1.2rem;
-            color: var(--gold-light);
-            font-weight: 600;
-        }
-
-        /* --- Info Sections Bottom --- */
-        .grid-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .info-box {
-            border: 1px solid var(--border-color);
-            padding: 30px;
-            background-color: rgba(11, 19, 32, 0.8);
-            border-radius: 5px;
-        }
-
-        .info-box h3 {
-            margin-bottom: 20px;
-        }
-
-        .info-list {
-            list-style: none;
-        }
-
-        .info-list li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .info-list li::before {
-            content: '✓';
-            color: var(--gold-light);
-            font-weight: bold;
-        }
-
-        /* --- Footer --- */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 20px 0;
-            text-align: center;
-            margin-top: 40px;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            background-color: var(--bg-color);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 10px;
-            color: var(--gold-light);
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .grid-tours, .grid-info {
-                grid-template-columns: 1fr;
-            }
-            .logo { font-size: 4rem; }
-            .agency-name { font-size: 1.5rem; }
-            th, td { font-size: 0.8rem; }
-        }
-    </style>
+    main { max-width: 900px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+    .welcome-box { border: 1px solid #AA7C11; background-color: #1A1A1A; padding: 40px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.8); }
+    h2 { color: #D4AF37; margin-bottom: 20px; text-transform: uppercase; font-size: 24px; }
+    p { margin-bottom: 20px; font-size: 18px; color: #CCCCCC; }
+    
+    /* Підвал сайту (Довідкові дані) */
+    footer { background-color: #1A1A1A; border-top: 2px solid #D4AF37; padding: 30px 20px; text-align: center; margin-top: 60px; color: #888888; font-size: 14px; }
+    footer p { margin-bottom: 5px; font-size: 14px; }
+    .footer-highlight { color: #D4AF37; font-weight: bold; }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo brand-font">DW</div>
-        <div class="agency-name brand-font">DREAMWAY</div>
-        <div style="letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 10px;">ТУР АГЕНЦІЯ</div>
-        <div class="tagline">Обирай себе. Обирай DreamWay ♡</div>
-        
-        <div class="hero-badge brand-font">
-            Подорожуй<br>з нами -<br>відкривай<br>Європу!<br>♡
-        </div>
-    </header>
+  <header>
+    <h1>DreamWay</h1>
+    <div class="subtitle">Ваш надійний провідник у світ незабутніх подорожей преміумкласу</div>
+  </header>
 
-    <div class="container">
-        <div class="nav-icons">
-            <div class="nav-item"><span class="gold-text">✈️</span> Авіа Тури</div>
-            <div class="nav-item"><span class="gold-text">🚌</span> Автобусні Тури</div>
-            <div class="nav-item"><span class="gold-text">🌊</span> Море</div>
-            <div class="nav-item"><span class="gold-text">⛰️</span> Гори</div>
-            <div class="nav-item"><span class="gold-text">🏛️</span> Європа</div>
-        </div>
+  <nav>
+    <a href="index.html" class="nav-btn active">Головна</a>
+    <a href="tours.html" class="nav-btn">Каталог турів</a>
+    <a href="info.html" class="nav-btn">Довідкова інформація</a>
+  </nav>
 
-        <h2 class="section-title">Прайс на тури</h2>
-
-        <div class="grid-tours">
-            <div class="tour-card">
-                <h3>✈️ Авіа Тури</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Напрямок</th>
-                            <th>Готелі нашої агенції</th>
-                            <th>8 днів /<br>7 ночей</th>
-                            <th>10 днів /<br>9 ночей</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="dest-name">Греція</div>
-                                <div class="dest-sub">о. Крит</div>
-                            </td>
-                            <td>
-                                <span class="hotel-name">DW Crete Resort & Spa 5★</span>
-                                <span class="hotel-name">DW Blue Sea Hotel 4★</span>
-                            </td>
-                            <td>від <span class="price">489€</span></td>
-                            <td>від <span class="price">599€</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="dest-name">Туреччина</div>
-                                <div class="dest-sub">Анталія</div>
-                            </td>
-                            <td>
-                                <span class="hotel-name">DW Palm Beach Hotel 5★</span>
-                                <span class="hotel-name">DW Turquoise Resort 5★</span>
-                            </td>
-                            <td>від <span class="price">499€</span></td>
-                            <td>від <span class="price">649€</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="dest-name">Іспанія</div>
-                                <div class="dest-sub">Коста-Дорада</div>
-                            </td>
-                            <td>
-                                <span class="hotel-name">DW Costa Dorada 4★</span>
-                                <span class="hotel-name">DW Sunny Resort 4★</span>
-                            </td>
-                            <td>від <span class="price">499€</span></td>
-                            <td>від <span class="price">649€</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="tour-card">
-                <h3>🚌 Автобусні Тури</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Напрямок</th>
-                            <th>Готелі нашої агенції</th>
-                            <th>Дні / Ночі</th>
-                            <th>Ціна</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="dest-name">Прага</div>
-                                <div class="dest-sub">Чехія</div>
-                            </td>
-                            <td>
-                                <span class="hotel-name">DW Prague Central 4★</span>
-                                <span class="hotel-name">DW Old Town Hotel 4★</span>
-                            </td>
-                            <td>5 днів /<br>4 ночі</td>
-                            <td>від <span class="price">199€</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="dest-name">Будапешт</div>
-                                <div class="dest-sub">Угорщина</div>
-                            </td>
-                            <td>
-                                <span class="hotel-name">DW Danube View 4★</span>
-                                <span class="hotel-name">DW City Center 4★</span>
-                            </td>
-                            <td>4 дні /<br>3 ночі</td>
-                            <td>від <span class="price">179€</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="dest-name">Відень</div>
-                                <div class="dest-sub">Австрія</div>
-                            </td>
-                            <td>
-                                <span class="hotel-name">DW Vienna City 4★</span>
-                                <span class="hotel-name">DW Imperial Hotel 4★</span>
-                            </td>
-                            <td>5 днів /<br>4 ночі</td>
-                            <td>від <span class="price">219€</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-             <div class="tour-card">
-                <h3>☀️ Море та Пляж</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Напрямок</th>
-                            <th>Готелі нашої агенції</th>
-                            <th>8 днів /<br>7 ночей</th>
-                            <th>10 днів /<br>9 ночей</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="dest-name">Болгарія</div>
-                                <div class="dest-sub">Сонячний берег</div>
-                            </td>
-                            <td>
-                                <span class="hotel-name">DW Sunny Beach Resort 4★</span>
-                                <span class="hotel-name">DW Marina Beach 4★</span>
-                            </td>
-                            <td>від <span class="price">399€</span></td>
-                            <td>від <span class="price">499€</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="dest-name">Хорватія</div>
-                                <div class="dest-sub">Спліт</div>
-                            </td>
-                            <td>
-                                <span class="hotel-name">DW Adriatic Resort 4★</span>
-                                <span class="hotel-name">DW Split Beach 4★</span>
-                            </td>
-                            <td>від <span class="price">449€</span></td>
-                            <td>від <span class="price">549€</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="tour-card">
-                <h3>⛰️ Гори та Природа</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Напрямок</th>
-                            <th>Готелі нашої агенції</th>
-                            <th>Дні / Ночі</th>
-                            <th>Ціна</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="dest-name">Швейцарія</div>
-                                <div class="dest-sub">Інтерлакен</div>
-                            </td>
-                            <td>
-                                <span class="hotel-name">DW Swiss Alps Lodge 4★</span>
-                                <span class="hotel-name">DW Lake View Hotel 4★</span>
-                            </td>
-                            <td>5 днів /<br>4 ночі</td>
-                            <td>від <span class="price">459€</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="dest-name">Австрія</div>
-                                <div class="dest-sub">Тіроль</div>
-                            </td>
-                            <td>
-                                <span class="hotel-name">DW Tirol Mountain 4★</span>
-                                <span class="hotel-name">DW Alpen Resort 4★</span>
-                            </td>
-                            <td>5 днів /<br>4 ночі</td>
-                            <td>від <span class="price">419€</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="grid-info">
-            <div class="info-box">
-                <h3>Чому обирають нас?</h3>
-                <ul class="info-list">
-                    <li>Досвід та надійність</li>
-                    <li>Вигідні ціни без переплат</li>
-                    <li>Індивідуальний підхід</li>
-                    <li>Підтримка на всіх етапах 24/7</li>
-                    <li>Тільки перевірені готелі</li>
-                </ul>
-            </div>
-            <div class="info-box">
-                <h3>У вартість входить:</h3>
-                <ul class="info-list">
-                    <li>Трансфер</li>
-                    <li>Проживання в готелі</li>
-                    <li>Харчування (згідно програми)</li>
-                    <li>Страхування</li>
-                    <li>Супровід представника</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="info-box" style="margin-bottom: 40px;">
-             <h3>Подорожуй з вигодою!</h3>
-             <ul class="info-list">
-                 <li>Раннє бронювання - знижки до 20%</li>
-                 <li>Постійним клієнтам - бонуси</li>
-                 <li>Оплата частинами</li>
-                 <li>Акції та спецпропозиції щомісяця</li>
-             </ul>
-        </div>
-
+  <main>
+    <div class="welcome-box">
+      <h2>Відкрийте світ розкоші разом із нами</h2>
+      <p>Туристична агенція <strong>DreamWay</strong> пропонує ексклюзивний відпочинок у наймальовничіших куточках планети. Ми дбаємо про кожну деталь вашої мандрівки, забезпечуючи бездоганний сервіс, найкращі готелі та повний супровід.</p>
+      <p>Перейдіть до нашого каталогу, щоб обрати тур своєї мрії або ознайомтеся з довідковими даними для зв'язку з нашими спеціалістами.</p>
     </div>
+  </main>
 
-    <footer>
-        <div class="contact-item">📍 м. Володимир, Україна</div>
-        <div class="contact-item">📞 +38 (096) 123 45 67</div>
-        <div class="contact-item">✈️ @dreamway_tyric</div>
-        <div class="contact-item">✉️ dreamway.tyric@gmail.com</div>
-    </footer>
+  <footer>
+    <p class="footer-highlight">© 2026 Туристична агенція DreamWay. Усі права захищено.</p>
+    <p>Адреса офісу: м. Володимир, вул. Устилузька, б. 42</p>
+    <p>Контактний телефон: <span class="footer-highlight">+380961234567</span></p>
+  </footer>
 
 </body>
 </html>
